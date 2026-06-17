@@ -22,7 +22,7 @@ export default function Header() {
           <img 
             src="/logo-removebg.png" 
             alt="Kaishi Innovations Logo" 
-            className="h-12 w-auto object-contain"
+            className="h-40 w-auto object-contain"
           />
         </a>
 

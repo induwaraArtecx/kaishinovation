@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, Fragment } from 'react'
 import {
   Code,
   Brain,
@@ -32,9 +32,11 @@ import {
 } from 'lucide-react'
 import Header from './component/Header'
 import Footer from './component/Footer'
-import awsLogo from './assets/aws.webp'
-import googleCloudLogo from './assets/google cloud.png'
-import microsoftLogo from './assets/microsoft.png'
+import awsLogo from './assets/aws.png'
+// import googleCloudLogo from './assets/google cloud.png'
+// import microsoftLogo from './assets/microsoft.png'
+import heroImage from './assets/home page - hero section - image.png'
+import ctaBg from './assets/cta banner bg.png'
 
 // Industry Filter Options
 const industries = [
@@ -221,8 +223,8 @@ function App() {
       <Header />
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden pt-12 pb-24 lg:pt-16 lg:pb-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <section className="relative overflow-hidden pt-12 pb-10 lg:pt-16 lg:pb-12 bg-white flex items-center lg:min-h-[620px] xl:min-h-[700px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
 
           {/* Left Column Text */}
           <div className="lg:col-span-5 flex flex-col items-start text-left z-10">
@@ -240,146 +242,48 @@ function App() {
                 Explore Solutions
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="border border-slate-200 hover:border-brand-navy/30 bg-white text-brand-navy font-semibold px-8 h-12 rounded-lg flex items-center justify-center gap-2 transition-all">
-                Book a Consultation
-                <Calendar className="w-4 h-4 text-brand-cyan" />
-              </button>
+              <button className="border border-brand-navy hover:bg-brand-navy/5 bg-white text-brand-navy font-semibold px-8 h-12 rounded-lg flex items-center justify-center gap-2 transition-all">
+  Book a Consultation
+  <Calendar className="w-4 h-4 text-brand-cyan" />
+</button>
             </div>
 
             {/* Partner Logos */}
             <div className="mt-16 w-full">
               <div className="flex flex-wrap items-center gap-x-10 gap-y-6">
-                <div className="h-8 flex items-center">
+                <div className="h-14 flex items-center">
                   <img src={awsLogo} alt="AWS" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="h-8 flex items-center">
-                  <img src={microsoftLogo} alt="Microsoft" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" />
+                  {/* <img src={microsoftLogo} alt="Microsoft" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" /> */}
                 </div>
                 <div className="h-8 flex items-center">
-                  <img src={googleCloudLogo} alt="Google Cloud" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" />
+                  {/* <img src={googleCloudLogo} alt="Google Cloud" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" /> */}
                 </div>
-                <div className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform duration-300">
+                {/* <div className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform duration-300">
                   <svg className="w-6 h-6 text-[#00a1e0]" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
                   </svg>
                   <span className="font-sans font-black text-slate-700 text-[15px] tracking-tight">salesforce <span className="font-normal text-[11px] text-slate-500">Partner</span></span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
 
-          {/* Right Column Visual Mockup - Cohesive Dashboard Mockup matching ui.jpeg */}
-          <div className="lg:col-span-7 relative flex items-center justify-center w-full py-6">
-            <div className="w-full max-w-2xl bg-brand-navy rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/10 relative overflow-hidden">
-
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-
-                <div className="md:col-span-7 flex flex-col justify-between gap-6">
-
-                  <div className="bg-white/5 border border-white/10 p-5 rounded-2xl">
-                    <div className="flex justify-between items-center">
-                      <span className="font-heading font-black text-lg tracking-wider text-white">Kaishi</span>
-                      <span className="text-[10px] text-slate-400">Business Growth</span>
-                    </div>
-
-                    <div className="mt-3 flex items-baseline gap-2">
-                      <span className="text-3xl font-heading font-black text-white">↑ 38.5%</span>
-                      <span className="text-xs text-emerald-400">vs last month</span>
-                    </div>
-
-                    {/* SVG Area Chart */}
-                    <div className="mt-4 h-24 w-full">
-                      <svg className="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
-                        <defs>
-                          <linearGradient id="chart-grad-hero" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#00b4d8" stopOpacity="0.4" />
-                            <stop offset="100%" stopColor="#00b4d8" stopOpacity="0" />
-                          </linearGradient>
-                        </defs>
-                        <path
-                          d="M0 25 C10 22, 20 28, 30 18 C40 8, 50 15, 60 12 C70 9, 80 5, 90 8 C95 9.5, 100 2, 100 2 L100 30 L0 30 Z"
-                          fill="url(#chart-grad-hero)"
-                        />
-                        <path
-                          d="M0 25 C10 22, 20 28, 30 18 C40 8, 50 15, 60 12 C70 9, 80 5, 90 8 C95 9.5, 100 2, 100 2"
-                          fill="none"
-                          stroke="#00b4d8"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-
-                  {/* Metrics Row */}
-                  <div className="grid grid-cols-3 gap-2 border border-white/10 bg-white/5 rounded-2xl p-4 divide-x divide-white/10 text-center">
-                    <div>
-                      <span className="text-[10px] text-slate-400 block">Revenue</span>
-                      <span className="text-sm sm:text-base font-bold font-heading text-white">$2.4M</span>
-                      <span className="text-[9px] text-emerald-400 block">+24.2%</span>
-                    </div>
-                    <div>
-                      <span className="text-[10px] text-slate-400 block pl-1">Clients</span>
-                      <span className="text-sm sm:text-base font-bold font-heading text-white pl-1">320+</span>
-                      <span className="text-[9px] text-emerald-400 block pl-1">+18.7%</span>
-                    </div>
-                    <div>
-                      <span className="text-[10px] text-slate-400 block pl-1">Solutions</span>
-                      <span className="text-sm sm:text-base font-bold font-heading text-white pl-1">560+</span>
-                      <span className="text-[9px] text-emerald-400 block pl-1">+31.5%</span>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Right Side: Circular Gauge */}
-                <div className="md:col-span-5 flex flex-col justify-between bg-white/5 border border-white/10 p-5 rounded-2xl">
-                  <div className="text-center flex flex-col items-center h-full justify-center">
-                    <span className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold text-center leading-tight">
-                      AI-Powered Analytics
-                    </span>
-
-                    <div className="relative my-6 flex items-center justify-center">
-                      <svg className="w-28 h-28 transform -rotate-90">
-                        <circle cx="56" cy="56" r="46" stroke="rgba(255,255,255,0.06)" strokeWidth="8" fill="none" />
-                        <circle
-                          cx="56"
-                          cy="56"
-                          r="46"
-                          stroke="#00b4d8"
-                          strokeWidth="8"
-                          fill="none"
-                          strokeDasharray="289"
-                          strokeDashoffset="86"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                      <div className="absolute flex flex-col items-center">
-                        <span className="text-2xl font-black font-heading text-white">128</span>
-                        <span className="text-[9px] text-emerald-400 uppercase tracking-widest font-semibold">Active</span>
-                      </div>
-                    </div>
-
-                    <div className="w-full text-center">
-                      <span className="text-[11px] text-slate-300 font-medium">Total Projects</span>
-                      <div className="flex gap-2 justify-center w-full pt-3 mt-1 border-t border-white/5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-cyan"></div>
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
-                        <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+          {/* Right Column Visual Mockup - High Fidelity Image from ui.jpeg (Full-bleed right side) */}
+          <div className="lg:col-span-7 w-full mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-0 lg:w-[54vw] xl:w-[56vw] z-0">
+            <img 
+              src={heroImage} 
+              alt="Kaishi Innovations Dashboard & Smart Infrastructure Mockup" 
+              className="w-full h-auto object-contain block"
+            />
           </div>
 
         </div>
       </section>
 
       {/* SERVICES SECTION */}
-      <section className="pt-24 pb-12 bg-slate-50/50">
+      <section className="pt-12 pb-12 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-slate-400">What We Do</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-black text-brand-navy">
@@ -468,26 +372,30 @@ function App() {
           </div>
 
           {/* Industry Icons Slider Section */}
-          <div className="mt-12 overflow-x-auto scrollbar-none flex justify-between gap-4 sm:gap-6 pb-2 border-b border-slate-100 min-w-max lg:min-w-full">
-            {industries.map((ind) => {
+          <div className="mt-12 overflow-x-auto scrollbar-none flex justify-between items-center gap-4 sm:gap-6 pb-2 border-b border-slate-100 min-w-max lg:min-w-full">
+            {industries.map((ind, index) => {
               const IndIcon = ind.icon
               const isActive = activeIndustry === ind.name
               return (
-                <button
-                  key={ind.name}
-                  onClick={() => handleIndustryClick(ind.name)}
-                  className={`flex flex-col items-center gap-3 px-3 py-2 transition-all duration-300 relative shrink-0 group ${isActive ? 'scale-[1.03]' : 'hover:-translate-y-0.5'
-                    }`}
-                >
-                  <IndIcon className={`w-8 h-8 transition-colors duration-300 ${isActive ? 'text-brand-cyan' : 'text-brand-navy'
-                    }`} />
-                  <span className={`text-[13px] tracking-tight transition-colors duration-300 whitespace-nowrap ${isActive ? 'font-bold text-brand-navy' : 'font-medium text-slate-500 group-hover:text-brand-navy'
-                    }`}>
-                    {ind.name}
-                  </span>
-                  <div className={`absolute -bottom-[9px] left-0 right-0 h-[2px] rounded-full transition-all duration-300 ${isActive ? 'bg-brand-cyan scale-100' : 'bg-transparent scale-0 group-hover:scale-50 group-hover:bg-slate-300'
-                    }`} />
-                </button>
+                <Fragment key={ind.name}>
+                  <button
+                    onClick={() => handleIndustryClick(ind.name)}
+                    className={`flex flex-col items-center gap-3 px-3 py-2 transition-all duration-300 relative shrink-0 group ${isActive ? 'scale-[1.03]' : 'hover:-translate-y-0.5'
+                      }`}
+                  >
+                    <IndIcon className={`w-8 h-8 transition-colors duration-300 ${isActive ? 'text-brand-cyan' : 'text-brand-navy'
+                      }`} />
+                    <span className={`text-[13px] tracking-tight transition-colors duration-300 whitespace-nowrap ${isActive ? 'font-bold text-brand-navy' : 'font-medium text-slate-500 group-hover:text-brand-navy'
+                      }`}>
+                      {ind.name}
+                    </span>
+                    <div className={`absolute -bottom-[9px] left-0 right-0 h-[2px] rounded-full transition-all duration-300 ${isActive ? 'bg-brand-cyan scale-100' : 'bg-transparent scale-0 group-hover:scale-50 group-hover:bg-slate-300'
+                      }`} />
+                  </button>
+                  {index < industries.length - 1 && (
+                    <div className="w-[1px] h-8 bg-slate-200 shrink-0" />
+                  )}
+                </Fragment>
               )
             })}
           </div>
@@ -646,7 +554,16 @@ function App() {
       {/* CTA BANNER */}
       <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden bg-brand-cyan text-white py-8 px-6 sm:px-12 md:py-8 md:px-16 rounded-[24px] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+          <div 
+            className="relative overflow-hidden bg-brand-cyan text-white py-8 px-6 sm:px-12 md:py-8 md:px-16 rounded-[24px] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl"
+            style={{ 
+              backgroundImage: `url("${ctaBg}")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          >
+            {/* Overlay to ensure text readability */}
+            <div className="absolute inset-0 bg-brand-cyan/50 z-0"></div>
 
 
             <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left md:max-w-2xl">

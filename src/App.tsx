@@ -33,6 +33,7 @@ import {
 import Header from './component/Header'
 import Footer from './component/Footer'
 import AboutUs from './component/AboutUs'
+import Blog from './component/Blog'
 import awsLogo from './assets/aws.png'
 import googleCloudLogo from './assets/google cloud.png'
 import microsoftLogo from './assets/microsoft.png'
@@ -192,9 +193,11 @@ const steps = [
 ]
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about'>(() => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'blog'>(() => {
     const hash = window.location.hash
-    return hash === '#/about' ? 'about' : 'home'
+    if (hash === '#/about') return 'about'
+    if (hash === '#/blog') return 'blog'
+    return 'home'
   })
   const [activeIndustry, setActiveIndustry] = useState('Real Estate')
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
@@ -203,7 +206,13 @@ function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash
-      setCurrentPage(hash === '#/about' ? 'about' : 'home')
+      if (hash === '#/about') {
+        setCurrentPage('about')
+      } else if (hash === '#/blog') {
+        setCurrentPage('blog')
+      } else {
+        setCurrentPage('home')
+      }
       window.scrollTo(0, 0)
     }
     window.addEventListener('hashchange', handleHashChange)
@@ -620,8 +629,10 @@ function App() {
       </section>
 
         </>
-      ) : (
+      ) : currentPage === 'about' ? (
         <AboutUs />
+      ) : (
+        <Blog />
       )}
 
       {/* FOOTER */}

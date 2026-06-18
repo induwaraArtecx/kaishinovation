@@ -10,7 +10,7 @@ export default function Header({ currentPage }: { currentPage?: string }) {
     { name: 'Services', href: '#', hasDropdown: true },
     { name: 'Solutions', href: '#', hasDropdown: true },
     { name: 'Portfolio', href: '#' },
-    { name: 'Blog', href: '#' },
+    { name: 'Blog', href: '#/blog' },
     { name: 'Careers', href: '#' },
   ]
 
@@ -31,7 +31,8 @@ export default function Header({ currentPage }: { currentPage?: string }) {
           {navLinks.map((link) => {
             const isActive =
               (link.name === 'Home' && (currentPage === 'home' || !currentPage)) ||
-              (link.name === 'About Us' && currentPage === 'about')
+              (link.name === 'About Us' && currentPage === 'about') ||
+              (link.name === 'Blog' && currentPage === 'blog')
 
             return (
               <a
@@ -73,7 +74,8 @@ export default function Header({ currentPage }: { currentPage?: string }) {
           {navLinks.map((link) => {
             const isActive =
               (link.name === 'Home' && (currentPage === 'home' || !currentPage)) ||
-              (link.name === 'About Us' && currentPage === 'about')
+              (link.name === 'About Us' && currentPage === 'about') ||
+              (link.name === 'Blog' && currentPage === 'blog')
 
             return (
               <a

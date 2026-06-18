@@ -488,7 +488,7 @@ export default function AboutUs() {
           <div className="lg:col-span-6 rounded-[28px] bg-slate-50 border border-slate-100 p-8 sm:p-10 shadow-sm flex flex-col justify-between">
             <div className="text-left">
               <div className="flex items-center gap-3">
-                <Globe className="w-6 h-6 text-brand-cyan" />
+                <Trophy className="w-6 h-6 text-brand-black" />
                 <h3 className="text-xl sm:text-2xl font-heading font-black text-brand-navy">Our Technology Partners</h3>
               </div>
               <p className="mt-2 text-slate-500 text-xs sm:text-[13px] font-normal leading-relaxed max-w-md">

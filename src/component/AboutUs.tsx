@@ -13,8 +13,7 @@ import {
   Headphones,
   Mail,
   ArrowRight,
-  Building,
-  User
+ 
 } from 'lucide-react'
 import awsLogo from '../assets/aws.png'
 import googleCloudLogo from '../assets/google cloud.png'

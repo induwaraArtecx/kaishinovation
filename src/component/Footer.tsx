@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from 'lucide-react'
+import footerLogo from '../assets/footer_logo.png'
 
 export default function Footer() {
   return (
@@ -8,9 +9,9 @@ export default function Footer() {
         {/* Col 1: Logo & Desc */}
         <div className="flex flex-col items-start gap-6">
           <img
-            src="src/assets/footer_logo.png"
+            src={footerLogo}
             alt="Kaishi Innovations Logo"
-            className="h-18 w-auto  brightness-100"
+            className="h-18 w-auto brightness-100"
           />
           <p className="text-slate-400 text-xs leading-relaxed font-normal max-w-sm">
             We build innovative, scalable and intelligent solutions that help businesses grow and succeed in a digital world.

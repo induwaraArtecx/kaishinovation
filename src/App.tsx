@@ -33,8 +33,8 @@ import {
 import Header from './component/Header'
 import Footer from './component/Footer'
 import awsLogo from './assets/aws.png'
-// import googleCloudLogo from './assets/google cloud.png'
-// import microsoftLogo from './assets/microsoft.png'
+import googleCloudLogo from './assets/google cloud.png'
+import microsoftLogo from './assets/microsoft.png'
 import heroImage from './assets/home page - hero section - image.png'
 import ctaBg from './assets/cta banner bg.png'
 
@@ -254,18 +254,13 @@ function App() {
                 <div className="h-14 flex items-center">
                   <img src={awsLogo} alt="AWS" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" />
                 </div>
-                <div className="h-8 flex items-center">
-                  {/* <img src={microsoftLogo} alt="Microsoft" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" /> */}
+                <div className="h-10 flex items-center">
+                  { <img src={microsoftLogo} alt="Microsoft" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" /> }
                 </div>
-                <div className="h-8 flex items-center">
-                  {/* <img src={googleCloudLogo} alt="Google Cloud" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" /> */}
+                <div className="h-19 flex items-center">
+                  { <img src={googleCloudLogo} alt="Google Cloud" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" /> }
                 </div>
-                {/* <div className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-[#00a1e0]" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
-                  </svg>
-                  <span className="font-sans font-black text-slate-700 text-[15px] tracking-tight">salesforce <span className="font-normal text-[11px] text-slate-500">Partner</span></span>
-                </div> */}
+                
               </div>
             </div>
           </div>

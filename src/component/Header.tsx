@@ -19,9 +19,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3">
-          <img 
-            src="/logo-removebg.png" 
-            alt="Kaishi Innovations Logo" 
+          <img
+            src="/logo-removebg.png"
+            alt="Kaishi Innovations Logo"
             className="h-40 w-auto object-contain"
           />
         </a>
@@ -42,13 +42,13 @@ export default function Header() {
 
         {/* Contact CTA */}
         <div className="hidden lg:block">
-          <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-[15px] px-6 h-11 rounded-lg transition-all shadow-md shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
+          <button className="bg-[#3EA77E] hover:bg-[#35906b] text-white font-semibold text-[15px] px-6 h-11 rounded-lg transition-all shadow-md shadow-[#3EA77E]/20 hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
             Contact Us
           </button>
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="lg:hidden p-2 text-brand-navy hover:text-brand-cyan transition-colors"
           aria-label="Toggle Menu"

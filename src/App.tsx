@@ -35,6 +35,7 @@ import Footer from './component/Footer'
 import awsLogo from './assets/aws.png'
 import googleCloudLogo from './assets/google cloud.png'
 import microsoftLogo from './assets/microsoft.png'
+import saleforceLogo from './assets/saleforce.png'
 import heroImage from './assets/home page - hero section - image.png'
 import ctaBg from './assets/cta banner bg.png'
 
@@ -231,7 +232,7 @@ function App() {
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] lg:leading-[1.15] font-heading font-black tracking-tight text-brand-navy">
               We Build Intelligent <br />
               Solutions for a <br />
-              <span className="text-brand-cyan">Smarter</span> <span className="text-emerald-500">Tomorrow</span>
+              <span className="text-[#253e73]">Smarter</span> <span className="text-[#3EA77E]">Tomorrow</span>
             </h1>
             <p className="mt-6 text-[16px] leading-relaxed text-slate-500 font-normal max-w-xl">
               Kaishi Innovations delivers next-generation AI, software, and digital solutions that help businesses transform, scale, and lead in a digital world.
@@ -243,33 +244,35 @@ function App() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button className="border border-brand-navy hover:bg-brand-navy/5 bg-white text-brand-navy font-semibold px-8 h-12 rounded-lg flex items-center justify-center gap-2 transition-all">
-  Book a Consultation
-  <Calendar className="w-4 h-4 text-brand-cyan" />
-</button>
+                Book a Consultation
+                <Calendar className="w-4 h-4 text-brand-cyan" />
+              </button>
             </div>
 
             {/* Partner Logos */}
             <div className="mt-16 w-full">
-              <div className="flex flex-wrap items-center gap-x-10 gap-y-6">
-                <div className="h-14 flex items-center">
+              <div className="flex flex-row items-center gap-x-6 sm:gap-x-8">
+                <div className="h-8 sm:h-10 flex items-center">
                   <img src={awsLogo} alt="AWS" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" />
                 </div>
-                <div className="h-10 flex items-center">
-                  { <img src={microsoftLogo} alt="Microsoft" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" /> }
+                <div className="h-5 sm:h-7 flex items-center">
+                  <img src={microsoftLogo} alt="Microsoft" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" />
                 </div>
-                <div className="h-19 flex items-center">
-                  { <img src={googleCloudLogo} alt="Google Cloud" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" /> }
+                <div className="h-8 sm:h-10 flex items-center">
+                  <img src={googleCloudLogo} alt="Google Cloud" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" />
                 </div>
-                
+                <div className="h-8 sm:h-10 flex items-center">
+                  <img src={saleforceLogo} alt="Salesforce" className="h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300" />
+                </div>
               </div>
             </div>
           </div>
 
           {/* Right Column Visual Mockup - High Fidelity Image from ui.jpeg (Full-bleed right side) */}
           <div className="lg:col-span-7 w-full mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-0 lg:w-[54vw] xl:w-[56vw] z-0">
-            <img 
-              src={heroImage} 
-              alt="Kaishi Innovations Dashboard & Smart Infrastructure Mockup" 
+            <img
+              src={heroImage}
+              alt="Kaishi Innovations Dashboard & Smart Infrastructure Mockup"
               className="w-full h-auto object-contain block"
             />
           </div>
@@ -281,8 +284,8 @@ function App() {
       <section className="pt-12 pb-12 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-slate-400">What We Do</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-black text-brand-navy">
-            End-to-End <span className="text-emerald-500">Digital Solutions</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-black text-[#253e73]">
+            End-to-End <span className="text-[#3EA77E]">Digital Solutions</span>
           </h2>
           <p className="mt-4 text-slate-500 font-normal max-w-xl mx-auto text-[15px] leading-relaxed">
             From strategy and design to development and support, we build solutions that drive real business impact.
@@ -315,11 +318,29 @@ function App() {
       {/* STATS BANNER */}
       <section className="bg-slate-50/50 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-brand-blue-dark rounded-[24px] py-10 px-6 sm:px-10 lg:px-12 text-white relative overflow-hidden shadow-xl shadow-brand-blue-dark/10">
+          <div className="relative overflow-hidden rounded-[24px] py-10 px-6 sm:px-10 lg:px-12 text-white shadow-xl shadow-brand-blue-dark/10 bg-[#062a69]">
+            {/* Background effects */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#082a67] via-[#0a3178] to-[#07245d]" />
+
+            {/* Soft glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(59,130,246,0.18),transparent_45%)]" />
+
+            {/* Wave pattern */}
+            <div
+              className="absolute inset-0 opacity-40"
+              style={{
+                backgroundImage: "url('/wave-pattern.svg')",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "bottom center",
+                backgroundSize: "cover",
+              }}
+            />
+
+            {/* Content */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 lg:gap-y-0 relative z-10">
 
               <div className="flex items-center justify-center gap-4 py-4 px-2 border-r border-b border-dashed border-white/15 lg:border-b-0">
-                <Rocket className="w-9 h-9 text-brand-cyan shrink-0" />
+                <Rocket className="w-9 h-9 text-sky-400 shrink-0" />
                 <div className="text-left">
                   <span className="text-3xl sm:text-4xl font-heading font-black block tracking-tight text-white leading-none">560+</span>
                   <span className="text-xs sm:text-sm text-slate-300 font-medium mt-1.5 block">Projects Delivered</span>
@@ -327,7 +348,7 @@ function App() {
               </div>
 
               <div className="flex items-center justify-center gap-4 py-4 px-2 border-b border-dashed border-white/15 lg:border-r lg:border-b-0">
-                <Users className="w-9 h-9 text-brand-cyan shrink-0" />
+                <Users className="w-9 h-9 text-[#3EA77E] shrink-0" />
                 <div className="text-left">
                   <span className="text-3xl sm:text-4xl font-heading font-black block tracking-tight text-white leading-none">320+</span>
                   <span className="text-xs sm:text-sm text-slate-300 font-medium mt-1.5 block">Happy Clients</span>
@@ -335,7 +356,7 @@ function App() {
               </div>
 
               <div className="flex items-center justify-center gap-4 py-4 px-2 border-r border-dashed border-white/15">
-                <Globe className="w-9 h-9 text-brand-cyan shrink-0" />
+                <Globe className="w-9 h-9 text-cyan-400 shrink-0" />
                 <div className="text-left">
                   <span className="text-3xl sm:text-4xl font-heading font-black block tracking-tight text-white leading-none">25+</span>
                   <span className="text-xs sm:text-sm text-slate-300 font-medium mt-1.5 block">Countries Served</span>
@@ -343,7 +364,7 @@ function App() {
               </div>
 
               <div className="flex items-center justify-center gap-4 py-4 px-2">
-                <Trophy className="w-9 h-9 text-brand-cyan shrink-0" />
+                <Trophy className="w-9 h-9 text-amber-400 shrink-0" />
                 <div className="text-left">
                   <span className="text-3xl sm:text-4xl font-heading font-black block tracking-tight text-white leading-none">8+</span>
                   <span className="text-xs sm:text-sm text-slate-300 font-medium mt-1.5 block">Years of Excellence</span>
@@ -361,13 +382,13 @@ function App() {
 
           <div className="text-center">
             <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-slate-400">Solutions for Every Industry</span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-black text-brand-navy">
-              We Understand. We Build. <span className="text-emerald-500">We Deliver.</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-black text-[#253e73]">
+              We Understand. We Build. <span className="text-[#3EA77E]">We Deliver.</span>
             </h2>
           </div>
 
           {/* Industry Icons Slider Section */}
-          <div className="mt-12 overflow-x-auto scrollbar-none flex justify-between items-center gap-4 sm:gap-6 pb-2 border-b border-slate-100 min-w-max lg:min-w-full">
+          <div className="mt-12 overflow-x-auto scrollbar-none flex justify-between items-center gap-4 sm:gap-6 lg:gap-2 xl:gap-4 pb-2 border-b border-slate-100 w-full">
             {industries.map((ind, index) => {
               const IndIcon = ind.icon
               const isActive = activeIndustry === ind.name
@@ -411,7 +432,9 @@ function App() {
 
               {/* Left Info Column */}
               <div className="lg:col-span-3 text-left flex flex-col items-start pr-4">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-cyan">Featured Projects</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-[#b7e7ef] via-[#6ca8d6] to-[#3156a3] bg-clip-text text-transparent">
+                  Featured Projects
+                </span>
                 <h3 className="mt-3 text-2xl sm:text-3xl font-heading font-black text-brand-navy leading-tight">
                   Real Solutions. <br />
                   Real Impact.
@@ -549,9 +572,9 @@ function App() {
       {/* CTA BANNER */}
       <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
+          <div
             className="relative overflow-hidden bg-brand-cyan text-white py-8 px-6 sm:px-12 md:py-8 md:px-16 rounded-[24px] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl"
-            style={{ 
+            style={{
               backgroundImage: `url("${ctaBg}")`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280" fill="none" width="100%" height="100%">
+  <!-- Definition for gradients if needed -->
+  <defs>
+    <linearGradient id="wave-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.05" />
+      <stop offset="50%" stop-color="#60a5fa" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.05" />
+    </linearGradient>
+    <linearGradient id="wave-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.03" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.03" />
+    </linearGradient>
+  </defs>
+
+  <!-- Multiple overlapping wave lines with offset and dashes to create a 3D mesh effect -->
+  <path d="M-100,180 Q250,80 600,160 T1300,140 Q1450,150 1600,160" stroke="url(#wave-grad-1)" stroke-width="1.5" stroke-dasharray="3 5" />
+  <path d="M-100,195 Q250,95 600,175 T1300,155 Q1450,165 1600,175" stroke="url(#wave-grad-1)" stroke-width="1.5" stroke-dasharray="3 5" />
+  <path d="M-100,210 Q250,110 600,190 T1300,170 Q1450,180 1600,190" stroke="url(#wave-grad-1)" stroke-width="1.5" stroke-dasharray="3 5" />
+  <path d="M-100,225 Q250,125 600,205 T1300,185 Q1450,195 1600,205" stroke="url(#wave-grad-1)" stroke-width="1.5" stroke-dasharray="3 5" />
+  <path d="M-100,240 Q250,140 600,220 T1300,200 Q1450,210 1600,220" stroke="url(#wave-grad-1)" stroke-width="1.5" stroke-dasharray="3 5" />
+  
+  <path d="M-100,120 Q300,220 700,130 T1500,150" stroke="url(#wave-grad-2)" stroke-width="1" stroke-dasharray="2 4" />
+  <path d="M-100,135 Q300,235 700,145 T1500,165" stroke="url(#wave-grad-2)" stroke-width="1" stroke-dasharray="2 4" />
+  <path d="M-100,150 Q300,250 700,160 T1500,180" stroke="url(#wave-grad-2)" stroke-width="1" stroke-dasharray="2 4" />
+  <path d="M-100,165 Q300,265 700,175 T1500,195" stroke="url(#wave-grad-2)" stroke-width="1" stroke-dasharray="2 4" />
+  <path d="M-100,180 Q300,280 700,190 T1500,210" stroke="url(#wave-grad-2)" stroke-width="1" stroke-dasharray="2 4" />
+
+  <path d="M-100,80 Q200,30 650,120 T1400,90 Q1500,80 1600,80" stroke="url(#wave-grad-1)" stroke-width="1.2" stroke-dasharray="4 6" />
+  <path d="M-100,95 Q200,45 650,135 T1400,105 Q1500,95 1600,95" stroke="url(#wave-grad-1)" stroke-width="1.2" stroke-dasharray="4 6" />
+  <path d="M-100,110 Q200,60 650,150 T1400,120 Q1500,110 1600,110" stroke="url(#wave-grad-1)" stroke-width="1.2" stroke-dasharray="4 6" />
+  <path d="M-100,125 Q200,75 650,165 T1400,135 Q1500,125 1600,125" stroke="url(#wave-grad-1)" stroke-width="1.2" stroke-dasharray="4 6" />
+</svg>

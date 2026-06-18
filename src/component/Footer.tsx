@@ -54,7 +54,7 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-bold font-heading text-white tracking-wide uppercase">Company</h4>
           <ul className="mt-4 flex flex-col gap-2.5 text-xs text-slate-400 font-medium">
-            <li><a href="#" className="hover:text-brand-cyan transition-colors">About Us</a></li>
+            <li><a href="#/about" className="hover:text-brand-cyan transition-colors">About Us</a></li>
             <li><a href="#" className="hover:text-brand-cyan transition-colors">Careers</a></li>
             <li><a href="#" className="hover:text-brand-cyan transition-colors">Blog</a></li>
             <li><a href="#" className="hover:text-brand-cyan transition-colors">News & Insights</a></li>

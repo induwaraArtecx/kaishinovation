@@ -1,4 +1,4 @@
-import { useState, useRef, Fragment } from 'react'
+import { useState, useRef, Fragment, useEffect } from 'react'
 import {
   Code,
   Brain,
@@ -32,6 +32,7 @@ import {
 } from 'lucide-react'
 import Header from './component/Header'
 import Footer from './component/Footer'
+import AboutUs from './component/AboutUs'
 import awsLogo from './assets/aws.png'
 import googleCloudLogo from './assets/google cloud.png'
 import microsoftLogo from './assets/microsoft.png'
@@ -191,9 +192,23 @@ const steps = [
 ]
 
 function App() {
+  const [currentPage, setCurrentPage] = useState<'home' | 'about'>(() => {
+    const hash = window.location.hash
+    return hash === '#/about' ? 'about' : 'home'
+  })
   const [activeIndustry, setActiveIndustry] = useState('Real Estate')
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
   const sliderRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash
+      setCurrentPage(hash === '#/about' ? 'about' : 'home')
+      window.scrollTo(0, 0)
+    }
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
 
   const nextProject = () => {
     const nextIdx = (currentProjectIndex + 1) % projects.length
@@ -221,7 +236,10 @@ function App() {
     <div className="min-h-screen bg-slate-50/30 text-brand-navy font-sans antialiased">
 
       {/* HEADER / NAVBAR */}
-      <Header />
+      <Header currentPage={currentPage} />
+
+      {currentPage === 'home' ? (
+        <>
 
       {/* HERO SECTION */}
       <section className="relative overflow-hidden pt-12 pb-10 lg:pt-16 lg:pb-12 bg-white flex items-center lg:min-h-[620px] xl:min-h-[700px]">
@@ -600,6 +618,11 @@ function App() {
           </div>
         </div>
       </section>
+
+        </>
+      ) : (
+        <AboutUs />
+      )}
 
       {/* FOOTER */}
       <Footer />

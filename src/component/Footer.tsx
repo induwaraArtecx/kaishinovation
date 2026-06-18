@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Col 1: Logo & Desc */}
         <div className="flex flex-col items-start gap-6">
           <img
-            src="src/assets/kaishi innovations footer logo.png"
+            src="src/assets/footer_logo.png"
             alt="Kaishi Innovations Logo"
             className="h-18 w-auto  brightness-100"
           />

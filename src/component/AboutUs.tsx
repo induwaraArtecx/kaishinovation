@@ -20,6 +20,7 @@ import googleCloudLogo from '../assets/google cloud.png'
 import microsoftLogo from '../assets/microsoft.png'
 import saleforceLogo from '../assets/saleforce.png'
 import ctaBg from '../assets/cta banner bg.png'
+import laurelWreath from '../assets/laurel-wreath-vector-illustration.png'
 
 export default function AboutUs() {
   const pillars = [
@@ -336,9 +337,9 @@ export default function AboutUs() {
       </section>
 
       {/* 4. Why Choose Us Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-16 lg:py-24 bg-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
-          <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-slate-400">
+          <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#253e73]">
             WHY CHOOSE US
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-black text-[#253e73]">
@@ -372,7 +373,7 @@ export default function AboutUs() {
       {/* 5. Our Leadership Section */}
       <section className="py-16 lg:py-24 bg-slate-50/30 border-t border-slate-100 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
-          <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-slate-400">
+          <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#253e73]">
             OUR LEADERSHIP
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-black text-brand-navy">
@@ -442,10 +443,10 @@ export default function AboutUs() {
 
       {/* 6. Awards & Partners Double Banner */}
       <section className="py-16 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-0 w-full">
 
           {/* Left Banner: Awards */}
-          <div className="lg:col-span-6 rounded-[28px] bg-[#062a69] text-white p-8 sm:p-10 relative overflow-hidden shadow-xl flex flex-col justify-between">
+          <div className="lg:col-span-6 rounded-t-[28px] rounded-b-none lg:rounded-l-[28px] lg:rounded-r-none bg-[#062a69] text-white p-8 sm:p-10 relative overflow-hidden shadow-xl flex flex-col justify-between">
             {/* Background design */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#082a67] to-[#07245d]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.15),transparent_40%)]" />
@@ -464,15 +465,7 @@ export default function AboutUs() {
             <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 relative z-10">
               {awards.map((award, idx) => (
                 <div key={idx} className="flex flex-col items-center text-center">
-                  {/* Laurel Wreath Inline SVG */}
-                  <svg viewBox="0 0 100 100" className="w-14 h-14 text-amber-400 fill-none stroke-current" strokeWidth="2.5">
-                    {/* Laurel branch left */}
-                    <path d="M 45,80 C 25,75 15,55 20,35 C 22,30 28,25 35,22 M 25,70 C 27,65 31,62 36,63 M 20,55 C 23,50 28,48 33,51 M 20,38 C 24,34 30,34 34,39" strokeLinecap="round" />
-                    {/* Laurel branch right */}
-                    <path d="M 55,80 C 75,75 85,55 80,35 C 78,30 72,25 65,22 M 75,70 C 73,65 69,62 64,63 M 80,55 C 77,50 72,48 67,51 M 80,38 C 76,34 70,34 66,39" strokeLinecap="round" />
-                    {/* Star/Award inside */}
-                    <polygon points="50,38 53,46 62,46 55,51 57,59 50,54 43,59 45,51 38,46 47,46" fill="currentColor" />
-                  </svg>
+                  <img src={laurelWreath} alt="Laurel Wreath" className="w-14 h-14 object-contain" />
                   <span className="text-[10px] font-bold text-white mt-3 leading-tight block">
                     {award.title}
                   </span>
@@ -485,7 +478,7 @@ export default function AboutUs() {
           </div>
 
           {/* Right Banner: Technology Partners */}
-          <div className="lg:col-span-6 rounded-[28px] bg-slate-50 border border-slate-100 p-8 sm:p-10 shadow-sm flex flex-col justify-between">
+          <div className="lg:col-span-6 rounded-b-[28px] rounded-t-none lg:rounded-r-[28px] lg:rounded-l-none bg-slate-50 border border-slate-100 p-8 sm:p-10 shadow-sm flex flex-col justify-between">
             <div className="text-left">
               <div className="flex items-center gap-3">
                 <Trophy className="w-6 h-6 text-brand-black" />
@@ -520,7 +513,7 @@ export default function AboutUs() {
       <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className="relative overflow-hidden bg-brand-cyan text-white py-8 px-6 sm:px-12 md:py-8 md:px-16 rounded-[24px] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl"
+            className="relative overflow-hidden bg-[#062a69] text-white py-8 px-6 sm:px-12 md:py-8 md:px-16 rounded-[24px] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl"
             style={{
               backgroundImage: `url("${ctaBg}")`,
               backgroundSize: 'cover',
@@ -528,7 +521,7 @@ export default function AboutUs() {
             }}
           >
             {/* Overlay to ensure text readability */}
-            <div className="absolute inset-0 bg-brand-cyan/50 z-0"></div>
+            <div className="absolute inset-0 bg-[#062a69]/80 z-0"></div>
 
             <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left md:max-w-2xl">
               <h2 className="text-2xl md:text-3xl font-heading font-black tracking-tight leading-tight">Let's Build the Future Together</h2>
@@ -538,7 +531,7 @@ export default function AboutUs() {
             </div>
 
             <div className="relative z-10 w-full md:w-auto flex justify-center md:justify-end shrink-0">
-              <button className="border-2 border-white bg-transparent hover:bg-white hover:text-brand-cyan text-white font-bold text-[15px] px-8 h-12 rounded-full flex items-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] group cursor-pointer shadow-md">
+              <button className="border-2 border-white bg-transparent hover:bg-white hover:text-[#062a69] text-white font-bold text-[15px] px-8 h-12 rounded-full flex items-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] group cursor-pointer shadow-md">
                 Let's Talk
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>

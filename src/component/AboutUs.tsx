@@ -524,7 +524,7 @@ export default function AboutUs() {
             <div className="absolute inset-0 bg-[#062a69]/80 z-0"></div>
 
             <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left md:max-w-2xl">
-              <h2 className="text-2xl md:text-3xl font-heading font-black tracking-tight leading-tight">Let's Build the Future Together</h2>
+              <h2 className="text-2xl md:text-3xl font-heading font-meduim tracking-tight leading-tight">Let's Build the Future Together</h2>
               <p className="mt-2 text-white/90 text-sm md:text-base font-normal max-w-xl leading-relaxed">
                 Partner with Kaishi Innovations and transform your ideas into impactful digital solutions.
               </p>

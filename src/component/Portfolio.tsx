@@ -23,6 +23,10 @@ import googleCloudLogo from '../assets/google cloud.png'
 import microsoftLogo from '../assets/microsoft.png'
 import saleforceLogo from '../assets/saleforce.png'
 import ctaBg from '../assets/cta banner bg.png'
+import fujitsuLogo from '../assets/fujitsu.png'
+import marubeniLogo from '../assets/Marubeni-logo.png'
+import softbankLogo from '../assets/softbank-logo.png'
+import sapLogo from '../assets/sap logo.png'
 
 interface Project {
   id: number
@@ -502,25 +506,18 @@ export default function Portfolio() {
               {/* Custom SVG logo / Text logo representations */}
               
               {/* 1. Fujitsu Logo */}
-              <div className="h-9 flex items-center justify-center shrink-0 hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <span className="text-red-650 font-heading font-black text-xl tracking-tight select-none">FUJITSU</span>
+              <div className="h-14 flex items-center justify-center shrink-0 hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src={fujitsuLogo} alt="Fujitsu Logo" className="h-full object-contain" />
               </div>
 
               {/* 2. Marubeni Logo */}
-              <div className="h-9 flex items-center justify-center gap-2 shrink-0 hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <div className="w-5 h-5 rounded-full border-2 border-red-500 relative flex items-center justify-center">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                </div>
-                <span className="text-brand-navy font-sans font-bold text-base select-none">Marubeni</span>
+              <div className="h-14 flex items-center justify-center shrink-0 hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src={marubeniLogo} alt="Marubeni Logo" className="h-full object-contain" />
               </div>
 
               {/* 3. SoftBank Logo */}
-              <div className="h-9 flex items-center justify-center gap-2.5 shrink-0 hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <div className="flex flex-col gap-0.5">
-                  <div className="w-6 h-1 bg-slate-400" />
-                  <div className="w-6 h-1 bg-slate-400" />
-                </div>
-                <span className="text-brand-navy font-heading font-extrabold text-sm select-none">SoftBank</span>
+              <div className="h-12 flex items-center justify-center shrink-0 hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src={softbankLogo} alt="SoftBank Logo" className="h-full object-contain" />
               </div>
 
               {/* 4. Microsoft Logo */}
@@ -545,9 +542,7 @@ export default function Portfolio() {
 
               {/* 8. SAP Logo */}
               <div className="h-9 flex items-center justify-center shrink-0 hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <div className="bg-[#008FD3] text-white px-3.5 py-1 rounded font-heading font-black text-sm select-none tracking-widest uppercase">
-                  SAP
-                </div>
+                <img src={sapLogo} alt="SAP Logo" className="h-full object-contain" />
               </div>
             </div>
 
@@ -580,7 +575,7 @@ export default function Portfolio() {
             <div className="absolute inset-0 bg-[#062a69]/40 z-0" />
             
             <div className="relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left lg:max-w-3xl">
-              <h2 className="text-3xl sm:text-4xl font-heading font-black tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-heading font-meduim tracking-tight leading-tight">
                 Have a Project in Mind?
               </h2>
               <p className="mt-3 text-slate-350 text-sm sm:text-base font-normal max-w-2xl leading-relaxed">

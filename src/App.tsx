@@ -35,6 +35,7 @@ import Footer from './component/Footer'
 import AboutUs from './component/AboutUs'
 import Blog from './component/Blog'
 import Portfolio from './component/Portfolio'
+import Careers from './component/Careers'
 import awsLogo from './assets/aws.png'
 import googleCloudLogo from './assets/google cloud.png'
 import microsoftLogo from './assets/microsoft.png'
@@ -194,11 +195,12 @@ const steps = [
 ]
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'blog' | 'portfolio'>(() => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'blog' | 'portfolio' | 'careers'>(() => {
     const hash = window.location.hash
     if (hash === '#/about') return 'about'
     if (hash === '#/blog') return 'blog'
     if (hash === '#/portfolio') return 'portfolio'
+    if (hash === '#/careers') return 'careers'
     return 'home'
   })
   const [activeIndustry, setActiveIndustry] = useState('Real Estate')
@@ -214,6 +216,8 @@ function App() {
         setCurrentPage('blog')
       } else if (hash === '#/portfolio') {
         setCurrentPage('portfolio')
+      } else if (hash === '#/careers') {
+        setCurrentPage('careers')
       } else {
         setCurrentPage('home')
       }
@@ -637,6 +641,8 @@ function App() {
         <AboutUs />
       ) : currentPage === 'portfolio' ? (
         <Portfolio />
+      ) : currentPage === 'careers' ? (
+        <Careers />
       ) : (
         <Blog />
       )}

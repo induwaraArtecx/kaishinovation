@@ -11,7 +11,7 @@ export default function Header({ currentPage }: { currentPage?: string }) {
     { name: 'Solutions', href: '#', hasDropdown: true },
     { name: 'Portfolio', href: '#/portfolio' },
     { name: 'Blog', href: '#/blog' },
-    { name: 'Careers', href: '#' },
+    { name: 'Careers', href: '#/careers' },
   ]
 
   return (
@@ -33,7 +33,8 @@ export default function Header({ currentPage }: { currentPage?: string }) {
               (link.name === 'Home' && (currentPage === 'home' || !currentPage)) ||
               (link.name === 'About Us' && currentPage === 'about') ||
               (link.name === 'Blog' && currentPage === 'blog') ||
-              (link.name === 'Portfolio' && currentPage === 'portfolio')
+              (link.name === 'Portfolio' && currentPage === 'portfolio') ||
+              (link.name === 'Careers' && currentPage === 'careers')
 
             return (
               <a
@@ -77,7 +78,8 @@ export default function Header({ currentPage }: { currentPage?: string }) {
               (link.name === 'Home' && (currentPage === 'home' || !currentPage)) ||
               (link.name === 'About Us' && currentPage === 'about') ||
               (link.name === 'Blog' && currentPage === 'blog') ||
-              (link.name === 'Portfolio' && currentPage === 'portfolio')
+              (link.name === 'Portfolio' && currentPage === 'portfolio') ||
+              (link.name === 'Careers' && currentPage === 'careers')
 
             return (
               <a

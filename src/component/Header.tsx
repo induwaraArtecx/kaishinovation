@@ -14,6 +14,7 @@ export default function Header({ currentPage }: { currentPage?: string }) {
       hasDropdown: true,
       dropdownItems: [
         { name: 'Enterprise Software Solutions', href: '#/services/enterprise-solutions' },
+        { name: 'Cross-Platform Apps', href: '#/services/cross-platform-apps' },
         { name: 'AI & ML Solutions', href: '#' },
         { name: 'Cloud & DevOps', href: '#' },
         { name: 'Data & Analytics', href: '#' },
@@ -58,7 +59,7 @@ export default function Header({ currentPage }: { currentPage?: string }) {
               (link.name === 'Blog' && currentPage === 'blog') ||
               (link.name === 'Portfolio' && currentPage === 'portfolio') ||
               (link.name === 'Careers' && currentPage === 'careers') ||
-              (link.name === 'Services' && currentPage === 'enterprise-solutions')
+              (link.name === 'Services' && (currentPage === 'enterprise-solutions' || currentPage === 'cross-platform-apps'))
 
             return (
               <div key={link.name} className="relative group flex items-center h-full py-4">
@@ -120,7 +121,7 @@ export default function Header({ currentPage }: { currentPage?: string }) {
               (link.name === 'Blog' && currentPage === 'blog') ||
               (link.name === 'Portfolio' && currentPage === 'portfolio') ||
               (link.name === 'Careers' && currentPage === 'careers') ||
-              (link.name === 'Services' && currentPage === 'enterprise-solutions')
+              (link.name === 'Services' && (currentPage === 'enterprise-solutions' || currentPage === 'cross-platform-apps'))
 
             return (
               <div key={link.name} className="flex flex-col border-b border-slate-50">

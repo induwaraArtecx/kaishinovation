@@ -37,6 +37,7 @@ import Blog from './component/Blog'
 import Portfolio from './component/Portfolio'
 import Careers from './component/Careers'
 import EnterpriseSolutions from './component/EnterpriseSolutions'
+import CrossPlatformApps from './component/CrossPlatformApps'
 import awsLogo from './assets/aws.png'
 import googleCloudLogo from './assets/google cloud.png'
 import microsoftLogo from './assets/microsoft.png'
@@ -202,13 +203,14 @@ const steps = [
 ]
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'blog' | 'portfolio' | 'careers' | 'enterprise-solutions'>(() => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'blog' | 'portfolio' | 'careers' | 'enterprise-solutions' | 'cross-platform-apps'>(() => {
     const hash = window.location.hash
     if (hash === '#/about') return 'about'
     if (hash === '#/blog') return 'blog'
     if (hash === '#/portfolio') return 'portfolio'
     if (hash === '#/careers') return 'careers'
     if (hash === '#/services/enterprise-solutions') return 'enterprise-solutions'
+    if (hash === '#/services/cross-platform-apps') return 'cross-platform-apps'
     return 'home'
   })
   const [activeIndustry, setActiveIndustry] = useState('Real Estate')
@@ -228,6 +230,8 @@ function App() {
         setCurrentPage('careers')
       } else if (hash === '#/services/enterprise-solutions') {
         setCurrentPage('enterprise-solutions')
+      } else if (hash === '#/services/cross-platform-apps') {
+        setCurrentPage('cross-platform-apps')
       } else {
         setCurrentPage('home')
       }
@@ -656,6 +660,8 @@ function App() {
         <Careers />
       ) : currentPage === 'enterprise-solutions' ? (
         <EnterpriseSolutions />
+      ) : currentPage === 'cross-platform-apps' ? (
+        <CrossPlatformApps />
       ) : (
         <Blog />
       )}

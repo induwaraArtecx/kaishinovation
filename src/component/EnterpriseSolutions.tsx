@@ -265,8 +265,8 @@ export default function EnterpriseSolutions() {
           ========================================== */}
       <section className="relative overflow-hidden pt-8 pb-16 lg:pb-24 bg-white flex items-center lg:min-h-[580px]">
         {/* Right diagonal layout mask */}
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[48vw] bg-[#031430] hidden lg:block overflow-hidden" 
-             style={{ clipPath: 'polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%)' }}>
+        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[48vw] bg-[#031430] hidden lg:block overflow-hidden"
+          style={{ clipPath: 'polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%)' }}>
           <div className="absolute inset-0 bg-gradient-to-tr from-[#031430] via-[#051c3d] to-[#031430]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,180,216,0.18),transparent_50%)]" />
           <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
@@ -310,7 +310,7 @@ export default function EnterpriseSolutions() {
             <div className="relative w-full max-w-[460px] aspect-[1.38] rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-md shadow-2xl p-4 flex flex-col text-slate-200 text-[11px] overflow-hidden select-none hover:scale-[1.01] hover:border-brand-cyan/20 transition-all duration-500">
               {/* Dashboard Glows */}
               <div className="absolute w-40 h-40 rounded-full bg-[#00b4d8]/10 -top-10 -left-10 blur-2xl" />
-              
+
               {/* Inner Layout */}
               <div className="flex h-full gap-3 relative z-10">
                 {/* Dashboard Sidebar */}
@@ -382,7 +382,7 @@ export default function EnterpriseSolutions() {
             <div className="w-52 h-[340px] rounded-[32px] border-[5px] border-slate-800 bg-slate-950 flex flex-col p-3 shadow-2xl relative text-left select-none shrink-0 overflow-hidden hover:scale-[1.02] transition-transform duration-500 lg:absolute lg:-right-4 lg:-bottom-12 z-20">
               {/* Speaker pill notch */}
               <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-14 h-3 bg-slate-800 rounded-full z-30" />
-              
+
               {/* Inner Content */}
               <div className="flex flex-col gap-3 h-full pt-4 relative z-10 text-[9px]">
                 <div className="flex justify-between items-center text-slate-400">
@@ -411,7 +411,7 @@ export default function EnterpriseSolutions() {
                     <div className="w-full bg-slate-850 h-1.5 rounded-full overflow-hidden">
                       <div className="bg-brand-cyan h-full rounded-full" style={{ width: '85%' }}></div>
                     </div>
-                    
+
                     <div className="flex justify-between text-slate-300 font-semibold mt-1">
                       <span>Server EU-3</span>
                       <span>42%</span>
@@ -596,35 +596,33 @@ export default function EnterpriseSolutions() {
           <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#3EA77E]">
             Technologies We Use
           </span>
-          
-          {/* Tech Badges Grid */}
-          <div className="mt-12 overflow-x-auto scrollbar-none w-full">
-            <div className="flex items-stretch gap-2.5 sm:gap-3.5 pb-2 justify-start lg:justify-center min-w-max mx-auto px-4">
-              {techStack.map((tech, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white px-3 py-3 rounded-xl border border-neutral-200/60 hover:border-neutral-300 hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center gap-2 w-[80px] sm:w-[95px] shrink-0"
-                >
-                  <div className="h-7 w-auto flex items-center justify-center shrink-0">
-                    <img src={tech.img} alt={tech.name} className="h-full w-auto object-contain" />
-                  </div>
-                  <span className="text-[9px] sm:text-[10px] font-bold text-brand-navy tracking-tight mt-0.5 whitespace-nowrap">
-                    {tech.name}
-                  </span>
-                </div>
-              ))}
 
-              {/* And More Badge */}
+          {/* Tech Badges Grid */}
+          <div className="mt-12 flex flex-wrap justify-center items-stretch gap-4 sm:gap-6 max-w-5xl mx-auto px-4">
+            {techStack.map((tech, idx) => (
               <div
-                className="bg-neutral-50 px-3 py-3 rounded-xl border border-dashed border-neutral-200 flex flex-col items-center justify-center gap-2 w-[80px] sm:w-[95px] shrink-0"
+                key={idx}
+                className="bg-white px-4 py-5 rounded-2xl border border-neutral-200/60 hover:border-neutral-300 hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center gap-3 w-[100px] sm:w-[125px] md:w-[140px] h-[100px] sm:h-[125px] md:h-[140px] shrink-0"
               >
-                <div className="w-7 h-7 rounded-full bg-neutral-100 border border-neutral-200/60 flex items-center justify-center text-slate-500 shrink-0">
-                  <MoreHorizontal className="w-4 h-4" />
+                <div className="h-10 sm:h-14 w-auto flex items-center justify-center shrink-0">
+                  <img src={tech.img} alt={tech.name} className="h-full w-auto object-contain" />
                 </div>
-                <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 tracking-tight mt-0.5 whitespace-nowrap">
-                  And More
+                <span className="text-[10px] sm:text-xs font-bold text-brand-navy tracking-tight mt-1 whitespace-nowrap">
+                  {tech.name}
                 </span>
               </div>
+            ))}
+
+            {/* And More Badge */}
+            <div
+              className="bg-neutral-50 px-4 py-5 rounded-2xl border border-dashed border-neutral-200 flex flex-col items-center justify-center gap-3 w-[100px] sm:w-[125px] md:w-[140px] h-[100px] sm:h-[125px] md:h-[140px] shrink-0"
+            >
+              <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-neutral-100 border border-neutral-200/60 flex items-center justify-center text-slate-500 shrink-0">
+                <MoreHorizontal className="w-5 h-5" />
+              </div>
+              <span className="text-[10px] sm:text-xs font-bold text-slate-400 tracking-tight mt-1 whitespace-nowrap">
+                And More
+              </span>
             </div>
           </div>
         </div>

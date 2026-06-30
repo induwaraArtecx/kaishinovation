@@ -36,6 +36,7 @@ import AboutUs from './component/AboutUs'
 import Blog from './component/Blog'
 import Portfolio from './component/Portfolio'
 import Careers from './component/Careers'
+import EnterpriseSolutions from './component/EnterpriseSolutions'
 import awsLogo from './assets/aws.png'
 import googleCloudLogo from './assets/google cloud.png'
 import microsoftLogo from './assets/microsoft.png'
@@ -65,6 +66,7 @@ const services = [
     bgColor: 'bg-blue-600',
     lightBg: 'bg-blue-50/80',
     iconColor: 'text-blue-600',
+    href: '#/services/enterprise-solutions',
   },
   {
     title: 'AI & Machine Learning',
@@ -73,6 +75,7 @@ const services = [
     bgColor: 'bg-emerald-500',
     lightBg: 'bg-emerald-50/80',
     iconColor: 'text-emerald-500',
+    href: '#',
   },
   {
     title: 'Cloud & DevOps Solutions',
@@ -81,6 +84,7 @@ const services = [
     bgColor: 'bg-indigo-600',
     lightBg: 'bg-indigo-50/80',
     iconColor: 'text-indigo-600',
+    href: '#',
   },
   {
     title: 'Data & Analytics',
@@ -89,6 +93,7 @@ const services = [
     bgColor: 'bg-amber-500',
     lightBg: 'bg-amber-50/80',
     iconColor: 'text-amber-500',
+    href: '#',
   },
   {
     title: 'Cybersecurity Solutions',
@@ -97,6 +102,7 @@ const services = [
     bgColor: 'bg-rose-500',
     lightBg: 'bg-rose-50/80',
     iconColor: 'text-rose-500',
+    href: '#',
   },
   {
     title: 'UI/UX Design & Branding',
@@ -105,6 +111,7 @@ const services = [
     bgColor: 'bg-cyan-500',
     lightBg: 'bg-cyan-50/80',
     iconColor: 'text-cyan-500',
+    href: '#',
   },
 ]
 
@@ -195,12 +202,13 @@ const steps = [
 ]
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'blog' | 'portfolio' | 'careers'>(() => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'blog' | 'portfolio' | 'careers' | 'enterprise-solutions'>(() => {
     const hash = window.location.hash
     if (hash === '#/about') return 'about'
     if (hash === '#/blog') return 'blog'
     if (hash === '#/portfolio') return 'portfolio'
     if (hash === '#/careers') return 'careers'
+    if (hash === '#/services/enterprise-solutions') return 'enterprise-solutions'
     return 'home'
   })
   const [activeIndustry, setActiveIndustry] = useState('Real Estate')
@@ -218,6 +226,8 @@ function App() {
         setCurrentPage('portfolio')
       } else if (hash === '#/careers') {
         setCurrentPage('careers')
+      } else if (hash === '#/services/enterprise-solutions') {
+        setCurrentPage('enterprise-solutions')
       } else {
         setCurrentPage('home')
       }
@@ -330,9 +340,10 @@ function App() {
             {services.map((service) => {
               const IconComp = service.icon
               return (
-                <div
+                <a
                   key={service.title}
-                  className="bg-white p-5 rounded-2xl border border-slate-100 hover:border-slate-200/80 shadow-md shadow-slate-100/40 hover:shadow-xl hover:shadow-slate-200/30 transition-all hover:-translate-y-1.5 duration-300 group"
+                  href={service.href}
+                  className="bg-white p-5 rounded-2xl border border-slate-100 hover:border-slate-200/80 shadow-md shadow-slate-100/40 hover:shadow-xl hover:shadow-slate-200/30 transition-all hover:-translate-y-1.5 duration-300 group block"
                 >
                   <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${service.bgColor} shadow-sm shadow-slate-100/50 transition-all duration-300 group-hover:scale-110`}>
                     <IconComp className="w-5 h-5 text-white" />
@@ -343,7 +354,7 @@ function App() {
                   <p className="mt-2 text-slate-500 text-[12.5px] leading-relaxed font-normal">
                     {service.description}
                   </p>
-                </div>
+                </a>
               )
             })}
           </div>
@@ -643,6 +654,8 @@ function App() {
         <Portfolio />
       ) : currentPage === 'careers' ? (
         <Careers />
+      ) : currentPage === 'enterprise-solutions' ? (
+        <EnterpriseSolutions />
       ) : (
         <Blog />
       )}

@@ -38,6 +38,7 @@ import Portfolio from './component/Portfolio'
 import Careers from './component/Careers'
 import EnterpriseSolutions from './component/EnterpriseSolutions'
 import CrossPlatformApps from './component/CrossPlatformApps'
+import SaasProductDevelopment from './component/SaasProductDevelopment'
 import awsLogo from './assets/aws.png'
 import googleCloudLogo from './assets/google cloud.png'
 import microsoftLogo from './assets/microsoft.png'
@@ -203,7 +204,7 @@ const steps = [
 ]
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'blog' | 'portfolio' | 'careers' | 'enterprise-solutions' | 'cross-platform-apps'>(() => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'blog' | 'portfolio' | 'careers' | 'enterprise-solutions' | 'cross-platform-apps' | 'saas-product-development'>(() => {
     const hash = window.location.hash
     if (hash === '#/about') return 'about'
     if (hash === '#/blog') return 'blog'
@@ -211,6 +212,7 @@ function App() {
     if (hash === '#/careers') return 'careers'
     if (hash === '#/services/enterprise-solutions') return 'enterprise-solutions'
     if (hash === '#/services/cross-platform-apps') return 'cross-platform-apps'
+    if (hash === '#/services/saas-product-development') return 'saas-product-development'
     return 'home'
   })
   const [activeIndustry, setActiveIndustry] = useState('Real Estate')
@@ -232,6 +234,8 @@ function App() {
         setCurrentPage('enterprise-solutions')
       } else if (hash === '#/services/cross-platform-apps') {
         setCurrentPage('cross-platform-apps')
+      } else if (hash === '#/services/saas-product-development') {
+        setCurrentPage('saas-product-development')
       } else {
         setCurrentPage('home')
       }
@@ -662,6 +666,8 @@ function App() {
         <EnterpriseSolutions />
       ) : currentPage === 'cross-platform-apps' ? (
         <CrossPlatformApps />
+      ) : currentPage === 'saas-product-development' ? (
+        <SaasProductDevelopment />
       ) : (
         <Blog />
       )}

@@ -38,7 +38,7 @@ const servicesMegaMenu = {
       items: [
         { name: 'Custom Software Development', href: '#' },
         { name: 'Enterprise Software Solutions', href: '#/services/enterprise-solutions' },
-        { name: 'SaaS Product Development', href: '#' },
+        { name: 'SaaS Product Development', href: '#/services/saas-product-development' },
         { name: 'API Development & Integration', href: '#' },
         { name: 'Legacy System Modernization', href: '#' }
       ]
@@ -390,7 +390,7 @@ export default function Header({ currentPage }: { currentPage?: string }) {
               (link.name === 'Blog' && currentPage === 'blog') ||
               (link.name === 'Portfolio' && currentPage === 'portfolio') ||
               (link.name === 'Careers' && currentPage === 'careers') ||
-              (link.name === 'Services' && (currentPage === 'enterprise-solutions' || currentPage === 'cross-platform-apps'))
+              (link.name === 'Services' && (currentPage === 'enterprise-solutions' || currentPage === 'cross-platform-apps' || currentPage === 'saas-product-development'))
 
             const isMegaMenu = link.name === 'Services' || link.name === 'Solutions'
 
@@ -700,7 +700,7 @@ export default function Header({ currentPage }: { currentPage?: string }) {
               (link.name === 'Blog' && currentPage === 'blog') ||
               (link.name === 'Portfolio' && currentPage === 'portfolio') ||
               (link.name === 'Careers' && currentPage === 'careers') ||
-              (link.name === 'Services' && (currentPage === 'enterprise-solutions' || currentPage === 'cross-platform-apps'))
+              (link.name === 'Services' && (currentPage === 'enterprise-solutions' || currentPage === 'cross-platform-apps' || currentPage === 'saas-product-development'))
 
             return (
               <div key={link.name} className="flex flex-col border-b border-slate-50">
